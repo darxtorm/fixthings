@@ -2,7 +2,7 @@
 ## defining mount folders to work with
 FOLDER1=moobies
 FOLDER2=backups
-echo -e \n
+echo -e "\n"
 echo "This script is designed to fix drive mounts that are normally empty but have been written to"
 read -p "Press Enter to continue, or Ctrl + C to abort" </dev/tty
 echo "First we will stop the containers. You may be asked to enter your password..."
@@ -47,10 +47,8 @@ echo
 read -p "Press Enter to continue, or Ctrl + C to abort" </dev/tty
 mkdir /tmp/$FOLDER1
 mkdir /tmp/$FOLDER2
-cd /mnt/$FOLDER1
-sudo mv * /tmp/$FOLDER1/
-cd /mnt/$FOLDER2
-sudo mv * /tmp/$FOLDER2/
+sudo mv /mnt/$FOLDER1/* /tmp/$FOLDER1/
+sudo mv /mnt/$FOLDER2/* /tmp/$FOLDER2/
 echo "Moving has finished, now let's check the sizes of the folders in /mnt again."
 echo
 du -d 1 -h /mnt
